@@ -8,18 +8,20 @@
   </head>
   <body>
 
-    <form id="new-animal">
-      <div id="form-div">
+    <h1>Endangered Animals Application</h1>
+
+    <div id="form-div">
+      <form id="new-animal">
 
         <div class="form-item">
-          <label for="species">Species:</label>
-          <input type="text" id="species" required>
+          <label for="species"></label>
+          <input type="text" id="species" class="input" placeholder="Enter Species" required>
         </div>
 
         <div class="form-item">
-          <label for="continent">Continent:</label>
+          <label for="continent"></label>
           <select id="continent" required>
-            <option value="" disabled selected>Select a continent:</option>
+            <option value="" disabled selected>Select a continent</option>
             <option value="Africa">Africa</option>
             <option value="Asia">Asia</option>
             <option value="Oceania">Oceania</option>
@@ -28,24 +30,53 @@
           </select>
         </div>
 
-        <div class="form-item">
-          <label for="status">Conservation Status:</label>
-          <select id="status" required>
+        <!-- <div class="form-item">
+          <label for="status"></label>
+            <select id="status" required>
               <option value="" disabled selected>Select conservation status</option>
               <option value="Least Concern">Least Concern</option>
               <option value="Near Threatened">Near Threatened</option>
               <option value="Vulnerable">Vulnerable</option>
               <option value="Endangered">Endangered</option>
               <option value="Critically Endangered">Critically Endangered</option>
-          </select>
-        </div>
-      </div>
-      <input type="submit" value="Store Details">
-    </form>
+            </select>
+          </div> -->
 
-    <h1>Endangered Species List</h1>
-    <div id="species-list"></div>
-    <button type="button" id="delete">Delete All</button>
+        <div class="form-item">
+          <p class="radio">Select a Conservation Status:</p>
+            <label><input type="radio" name="status" value="Least Concern" required checked>Least Concern</label><br>
+            <label><input type="radio" name="status" value="Near Threatened">Near Threatened</label><br>
+            <label><input type="radio" name="status" value="Vulnerable">Vulnerable</label><br>
+            <label><input type="radio" name="status" value="Endangered">Endangered</label><br>
+            <label><input type="radio" name="status" value="Critically Endangered">Critically Endangered</label>
+          </div>
+        <input type="submit" value="Store Details" id="submit">
+      </form>
+    </div>
+
+    <div id="right-div">
+      <!-- <h3>Endangered Species List</h3>
+      <div id="species-list">
+        <h4>Species -- Continent -- Status</h4>
+      </div>
+      <button type="button" id="delete">Delete All</button> -->
+
+      <table id="table">
+      <thead>
+          <tr class="theader">
+              <th colspan="3">Endangered Species List</th>
+          </tr>
+          <tr class="theader">
+            <th>Species</th>
+            <th>Continent</th>
+            <th>Status</th>
+          </tr>
+      </thead>
+      <tbody id="tbody">
+      </tbody>
+    </table>
+          <button type="button" id="delete">Delete All</button>
+    </div>
 
   </body>
 </html>
